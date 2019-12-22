@@ -24,8 +24,8 @@
 
 ## 前后台应用技术
 
->后端：maven tomcat mysql spring spring-mvc mybatis
->前端：html css javascript lay-ui fetch
+>后端：maven tomcat mysql spring spring-mvc mybatis redis logback junit penggle java-mail
+>前端：html css javascript lay-ui ajax
 
 ## 项目结构图
 
@@ -49,9 +49,9 @@
 |-- /assets/           #静态资源，如图片，公共css，js等
 |-- /pages/            #存放网页文件，将各网页html，css，js打包存放
 ```
-##
 
 ## 注意事项
 
-1.未审核通过的对象在一定时间后删除(设置为7天)
-
+1.被封号的用户在一定时间后删除(设置为7天)
+2.后端数据库直接存储加密后的密码
+3.日志文件存放保留30天
