@@ -8,7 +8,9 @@
                         <img v-if="personInfo.status==2" class="faceicon" src="@/assets/zt.jpg"/>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item>退出登录</el-dropdown-item>
+                        <el-dropdown-item>
+                            <span @click="logout">退出登录</span>
+                        </el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
             </el-header>
@@ -70,6 +72,11 @@ export default {
         handleClose(key, keyPath) {
             this.routenow = '';
             console.log(key, keyPath);
+        },
+        logout() {
+            loginFetcher.get("logout");
+            localStorage.removeItem('token');
+            location.href = "./login"
         }
     },
     components: {

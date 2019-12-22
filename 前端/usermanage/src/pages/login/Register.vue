@@ -56,8 +56,8 @@
 </template>
 
 <script>
-import {registerFetcher} from "../../js/_fetchers.js"
-import {hex_md5} from "../../js/md5.js"
+import { registerFetcher } from "../../js/_fetchers.js"
+import { hex_md5 } from "../../js/md5.js"
 export default {
     name: 'Register',
     data() {

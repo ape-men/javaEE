@@ -49,7 +49,8 @@
 </template>
 
 <script>
-import {personPageFetcher} from "../../js/_fetchers.js"
+import { personPageFetcher } from "../../js/_fetchers.js"
+import {hex_md5} from "../../js/md5.js"
 export default {
     props: ['info'],
     data() {

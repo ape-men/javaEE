@@ -128,13 +128,13 @@ export default {
                     })
                 } break;
                 case 2: {
-                    backToLogin();
+                    this.backToLogin();
                 } break;
             }
         },
         sendCheck() {
             passwordFetcher.get("sendCheckString").catch((res) => {
-                this.$notify('发送失败');
+                if (!~res.success) this.$notify('发送失败');
             })
         }
     }
