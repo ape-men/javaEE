@@ -79,7 +79,7 @@ export default {
                                     message: '登录成功'
                                 });
                                 this.setToken(res.token);
-                                location.href = "./personPage";
+                                location.href = "./PersonPage";
                             } break;
                             case 2: {
                                 this.$prompt('请更新密码', '提示', {
@@ -100,7 +100,7 @@ export default {
                                         message: '修改成功',
                                     })
                                     this.setToken(res.token);
-                                    location.href = "./personPage";
+                                    location.href = "./PersonPage";
                                 }).catch(() => {
                                     this.$message({
                                         type: 'info',
