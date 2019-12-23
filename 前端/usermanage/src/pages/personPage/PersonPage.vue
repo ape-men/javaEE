@@ -47,10 +47,10 @@ export default {
     data() {
         return {
             personInfo: {
-                email: String,
+                email: '',
                 status: Number,
-                userId: Number,
-                userName: String,
+                userId: '',
+                userName: '',
             },
             routes: ['', 'person-info', 'control-table'],
             routenow: 'person-info',
@@ -74,7 +74,7 @@ export default {
         logout() {
             loginFetcher.get("logout");
             localStorage.removeItem('token');
-            location.href = "./login"
+            location.href = "./Login"
         }
     },
     components: {
