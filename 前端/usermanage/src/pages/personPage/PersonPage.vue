@@ -74,7 +74,7 @@ export default {
         logout() {
             loginFetcher.get("logout");
             localStorage.removeItem('token');
-            location.href = "./login"
+            location.href = "./Login"
         }
     },
     components: {

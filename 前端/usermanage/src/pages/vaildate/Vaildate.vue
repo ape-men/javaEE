@@ -18,7 +18,7 @@ export default {
                 ['验证成功', '点击转入登录页面'] : ['验证失败', '请重新注册']
             this.$alert(content, title, {
                 confirmButtonText: '确定',
-                callback: () => window.location.href = "./login",
+                callback: () => window.location.href = "./Login",
             });
         })
     }

@@ -86,7 +86,7 @@ export default {
     },
     methods: {
         changePassword(form) {
-            this.$refs.registerForm.validate((valid) => {
+            this.$refs.resetForm.validate((valid) => {
                 if (valid) {
                     delete form.comfirmPassword;
                     let upload = Object.assign({}, form);
