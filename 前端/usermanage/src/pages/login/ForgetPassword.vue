@@ -118,7 +118,7 @@ export default {
                     passwordFetcher.post("findPassword", {
                         userName: form.username,
                         mode: form.useEmail ? 1 : 2,
-                        checkString: form.checkString,
+                        checkString: form.checkString.toUpperCase(),
                         questionAnswer: hex_md5(form.questionAnswer),
                         newPassword: hex_md5(form.newPassword),
                     }).then((res) => {
