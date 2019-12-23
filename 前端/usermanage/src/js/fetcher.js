@@ -55,6 +55,12 @@ export class fetcherWithToken extends fetcher {
         console.log(body);
         return fetch(url, body)
             .then((res) => res.json())
+            .then((res) => {
+                if (!~res.success) {
+                    location.href = "./login"
+                }
+                return res;
+            })
             .catch(() => {});
     }
     
