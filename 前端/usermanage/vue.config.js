@@ -3,7 +3,7 @@ module.exports = {
 
     outputDir: 'dist',
 
-    assetsDir: 'static',
+    assetsDir: './static',
 
     filenameHashing: true,
 
