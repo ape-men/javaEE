@@ -41,8 +41,8 @@
             </el-table-column>
             <el-table-column label="操作" width="200">
                 <template slot-scope="scope">
-                    <el-button size="mini" @click="openEditPanel(scope.row)">操作</el-button>
-                    <el-button size="mini" @click="viewLogin(scope.row.userId)">登录记录</el-button>
+                    <el-button v-if="scope.row.status!==2" size="mini" @click="openEditPanel(scope.row)">操作</el-button>
+                    <el-button style="margin-left:8px;" size="mini" @click="viewLogin(scope.row.userId)">登录记录</el-button>
                 </template>
             </el-table-column>
         </el-table>
@@ -124,6 +124,7 @@ export default {
                 });
         },
         openEditPanel(info) {
+            if (info.status === 2) return;
             this.optPanel = true;
             this.$refs.optPanel.open(info);
         },
