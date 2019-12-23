@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import {loginFetcher, personPageFetcher} from "../../js/_fetchers.js"
-import {hex_md5} from "../../js/md5.js"
+import { loginFetcher } from "../../js/_fetchers.js"
+import { hex_md5 } from "../../js/md5.js"
 export default {
     name: 'Login',
     data() {

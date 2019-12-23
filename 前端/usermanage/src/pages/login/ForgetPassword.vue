@@ -20,7 +20,7 @@
                 placeholder="验证码"
                 v-model="forgetForm.checkString"
             >
-                <el-button @click="sendCheck" slot="append" icon="el-icon-message">发送</el-button>
+                <el-button @click="sendCheck" :disabled="!!sendCnt" slot="append" icon="el-icon-message">{{ sendbtn }}</el-button>
             </el-input>
         </el-form-item>
         <el-form-item 
@@ -81,6 +81,12 @@ export default {
                 "我最看重什么东西",
                 "我小时候的梦想是什么",
             ],
+            sendCnt: 0,
+        }
+    },
+    computed: {
+        sendbtn() {
+            return this.sendCnt ? this.sendCnt + "秒后可再次发送" : "发送";
         }
     },
     methods: {
@@ -133,8 +139,13 @@ export default {
             }
         },
         sendCheck() {
-            passwordFetcher.get("sendCheckString").catch((res) => {
-                if (!~res.success) this.$notify('发送失败');
+            passwordFetcher.get("sendCheckString").then((res) => {
+                if (~res.success) {
+                    this.sendCnt = 60;
+                    let t = setInterval(() => {
+                        if (!(--this.sendCnt)) clearInterval(t);
+                    }, 1000);
+                } else this.$message('发送失败');
             })
         }
     }
