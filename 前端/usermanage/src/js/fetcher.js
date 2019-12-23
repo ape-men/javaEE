@@ -63,8 +63,7 @@ export class fetcherWithToken extends fetcher {
             })
             .catch(() => {});
     }
-    
-};
+}
 /*
 let f = new class fetcher {
     constructor(url) {this.url = url}

@@ -40,9 +40,7 @@
 </template>
 
 <script>
-import {
-    loginFetcher, personPageFetcher, superAdminFetcher
-} from "../../js/_fetchers.js"
+import { loginFetcher, personPageFetcher } from "../../js/_fetchers.js"
 import ControlTable from "../../components/table/ControlTable"
 import PersonInfo from "./PersonInfo"
 export default {

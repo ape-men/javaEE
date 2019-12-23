@@ -90,7 +90,7 @@ export default new class CSVmaker {
         // Step 2: 如果不是PC平台（Android），则只支持chrome
         if (!this.platform.isPC) {
             if (!this.platform.isChrome || this.platform.isQQ || this.platform.isWeChat) { // 检测chrome
-                if (core.copy(content)) {
+                if (this.copy(content)) {
                     alert("移动端只有Chrome浏览器支持直接下载文件！\n所有应下载内容已经复制到您的剪切板，请自行创建空白文件并粘贴。");
                 }
                 else {
